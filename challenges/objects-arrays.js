@@ -1,3 +1,5 @@
+
+ 
 // ==== Objects ====
 
 /* 
@@ -111,13 +113,13 @@ console.table(contactInfo);
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 let uni = [];
 
-function Finduni (arr){
+function Finduni(arr) {
   if (arr.university.includes("Uni")) {
 
     return (arr.university);
   }
 }
- uni = graduates.filter(Finduni);
+uni = graduates.filter(Finduni);
 console.table(uni);
 
 
@@ -144,7 +146,7 @@ The zoo wants to display both the scientific name and the animal name in front o
 */
 let animalNames = [];
 
-function Matchnames (arr){
+function Matchnames(arr) {
 
   return animalNames = animalNames.concat(`Name: ${arr.animal_name}, Scientific: ${arr.scientific_name} `);
 }
@@ -160,7 +162,7 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 let lowerCase = [];
 
-function Lowernames (arr) {
+function Lowernames(arr) {
   return lowerCase = lowerCase.concat(arr.animal_name.toLowerCase());
 
 }
@@ -174,7 +176,7 @@ The zoos are concenred about animals with a lower population count. Find out whi
 */
 let lowerPopulation = [];
 
-function Lownums (arr) {
+function Lownums(arr) {
   if (arr.population < 5) {
 
     return arr.population;
@@ -191,7 +193,7 @@ The zoos need to know their total animal population across the United States.  F
 */
 let populationTotal = 0;
 
-function Anitotal (acc, arr){
+function Anitotal(acc, arr)  {
 
   return acc + arr.population;
 }
@@ -204,4 +206,5 @@ console.log(populationTotal);
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
 */
+
 

@@ -1,3 +1,4 @@
+
 // 1. Copy and paste your prototype in here and refactor into class syntax.
 
 /* ===== Prototype Practice ===== */
@@ -14,17 +15,18 @@
 //     this.height = height;
 // }
 
-class Cuboidmaker  {
-    constructor (length,width,height) {
+class Cuboidmaker {
+    constructor(length, width, height) {
+        
         this.length = length;
         this.width = width;
         this.height = height;
     }
-    volume () {
+    volume() {
 
-         return volumes = this.length * this.width * this.height;
+        return volumes = this.length * this.width * this.height;
     }
-    surfaceArea () {
+    surfaceArea() {
 
         return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
     }
@@ -57,7 +59,7 @@ Create a cuboid object that uses the new keyword to use our CuboidMaker construc
 Add properties and values of length: 4, width: 5, and height: 5 to cuboid.   
 */
 
-cuboid = new CuboidMaker (4, 5, 5);
+cuboid = new CuboidMaker(4, 5, 5);
 
 
 // Test your volume and surfaceArea methods by uncommenting the logs below:
@@ -74,9 +76,10 @@ console.log(cuboid.surfaceArea()); // 130
 // Stretch Task: Extend the base class CuboidMaker with a sub class called CubeMaker.  Find out the formulas for volume and surface area for cubes and create those methods using the dimension properties from CuboidMaker.  Test your work by logging out your volume and surface area.
 
 class Cube extends Cuboidmaker {
-    constructor(length,width,height){
 
-        super(length,width,height);
+    constructor(length, width, height) {
+
+        super(length, width, height);
     }
     volumecube() {
 
@@ -84,13 +87,13 @@ class Cube extends Cuboidmaker {
     }
     surfaceAreaCube() {
 
-        return (this.length * this.length) * 6 ;
+        return (this.length * this.length) * 6;
     }
 
 
 }
 
 let cube = new Cube(3, 3, 3);
- console.log(cube.volumecube()); //27
- console.log(cube.surfaceAreaCube()); //54
+console.log(cube.volumecube()); //27
+console.log(cube.surfaceAreaCube()); //54
 

@@ -46,7 +46,7 @@ Closure refers to the lexical environment where a function was called. It refers
 1.Global binding - " this" keyword is used to refer to a top level object/window.   
 2.Implicit binding - "this" keyword is used to reference an object/function where it has been called.
 3.New binding - "this" keyword refers to a specific instance of an object returned by a constructor function.
- 4.Explicit binding - used when calling apply/call methods, "this" keyword is explicitly defined.
+ 4.Explicit binding - used when calling apply/call/bind methods, "this" keyword is explicitly defined.
 
 5. Why do we need super() in an extended class?
 
