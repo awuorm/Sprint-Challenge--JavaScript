@@ -116,10 +116,10 @@ let uni = [];
 function Finduni(arr) {
   if (arr.university.includes("Uni")) {
 
-    return (arr.university);
+    return uni = uni.concat(arr.university);
   }
 }
-uni = graduates.filter(Finduni);
+graduates.filter(Finduni);
 console.table(uni);
 
 
