@@ -83,11 +83,8 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 /* Request 1: Create a new array called universities that contains all the universities in the graduates array.  
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-let universities = graduates.map((arr) => {
-  return arr.university;
-}).sort();
-
-console.table(universities);
+let universities = graduates.map((arr) => arr.university);
+console.table(universities.sort());
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
@@ -105,7 +102,6 @@ console.table(contactInfo);
 
  let uni = graduates.filter( function (arr) {
   if (arr.university.includes("Uni")) {
-
     return arr.university;
   }
 });
@@ -134,7 +130,7 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 let animalNames = [];
-zooAnimals.forEach((arr) => animalNames = animalNames.concat(`Name: ${arr.animal_name}, Scientific: ${arr.scientific_name} `));
+zooAnimals.forEach((arr) => animalNames = animalNames.concat(`Name: ${arr.animal_name}, Scientific: ${arr.scientific_name}`));
 console.table(animalNames);
 
 /* Request 2: .map()    
@@ -152,7 +148,7 @@ The zoos are concenred about animals with a lower population count. Find out whi
 
 */
 
-let lowerPopulation = zooAnimals.filter( function (arr) {
+let lowerPopulation = zooAnimals.filter(function(arr) {
   if (arr.population < 5) {
     return arr.population;
   }
