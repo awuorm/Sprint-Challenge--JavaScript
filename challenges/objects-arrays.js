@@ -112,13 +112,13 @@ console.table(contactInfo);
 let uni = [];
 
 function Finduni (arr){
-  if (arr.university === "uni") {
+  if (arr.university.includes("Uni")) {
 
     return (arr.university);
   }
 }
- uni = graduates.map(Finduni);
-console.log(uni);
+ uni = graduates.filter(Finduni);
+console.table(uni);
 
 
 // ==== ADVANCED Array Methods ====
@@ -192,7 +192,7 @@ The zoos need to know their total animal population across the United States.  F
 let populationTotal = 0;
 
 function Anitotal (acc, arr){
-  
+
   return acc + arr.population;
 }
 populationTotal = zooAnimals.reduce(Anitotal, 0);
