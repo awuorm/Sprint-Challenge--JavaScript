@@ -83,15 +83,11 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 /* Request 1: Create a new array called universities that contains all the universities in the graduates array.  
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-let universities = [];
+let universities = graduates.map((arr) => {
+  return arr.university;
+}).sort();
 
-function Univ (arr){
-
-  return universities = universities.concat(arr.university);
-}
-graduates.filter(Univ);
-
-console.table(universities.sort());
+console.table(universities);
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
 
@@ -99,27 +95,20 @@ The resulting contact information should have a space between the first name and
 Name email@example.com
 
 Log the result of your new array. */
-let contactInfo = [];
 
-function Contacts (arr) {
+let contactInfo = graduates.map((arr) => `${arr.first_name} ${arr.email}`);
 
-  return contactInfo = contactInfo.concat(`${arr.first_name} ${arr.email}`);
-
-}
-graduates.map (Contacts);
 console.table(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-let uni = [];
 
-function Finduni(arr) {
+ let uni = graduates.filter( function (arr) {
   if (arr.university.includes("Uni")) {
 
-    return uni = uni.concat(arr.university);
+    return arr.university;
   }
-}
-graduates.filter(Finduni);
+});
 console.table(uni);
 
 
@@ -145,13 +134,7 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 let animalNames = [];
-
-function Matchnames(arr) {
-
-  return animalNames = animalNames.concat(`Name: ${arr.animal_name}, Scientific: ${arr.scientific_name} `);
-}
-
-zooAnimals.forEach(Matchnames);
+zooAnimals.forEach((arr) => animalNames = animalNames.concat(`Name: ${arr.animal_name}, Scientific: ${arr.scientific_name} `));
 console.table(animalNames);
 
 /* Request 2: .map()    
@@ -160,13 +143,7 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 
-let lowerCase = [];
-
-function Lowernames(arr) {
-  return lowerCase = lowerCase.concat(arr.animal_name.toLowerCase());
-
-}
-zooAnimals.map(Lowernames);
+let lowerCase = zooAnimals.map((arr) => arr.animal_name.toLowerCase());
 console.table(lowerCase); 
 
 /* Request 3: .filter() 
@@ -174,16 +151,12 @@ console.table(lowerCase);
 The zoos are concenred about animals with a lower population count. Find out which animals have a population less than 5.
 
 */
-let lowerPopulation = [];
 
-function Lownums(arr) {
+let lowerPopulation = zooAnimals.filter( function (arr) {
   if (arr.population < 5) {
-
     return arr.population;
   }
-  
-}
-lowerPopulation = lowerPopulation.concat(zooAnimals.filter(Lownums));
+});
 console.table(lowerPopulation);
 
 /* Request 4: .reduce() 
@@ -191,13 +164,13 @@ console.table(lowerPopulation);
 The zoos need to know their total animal population across the United States.  Find the total population from all the zoos using the .reduce() method.
 
 */
-let populationTotal = 0;
+// let populationTotal = 0;
 
-function Anitotal(acc, arr)  {
+// function Anitotal(acc, arr)  {
 
-  return acc + arr.population;
-}
-populationTotal = zooAnimals.reduce(Anitotal, 0);
+//   return acc + arr.population;
+// }
+let populationTotal = zooAnimals.reduce((acc, arr) => acc + arr.population,0);
 console.log(populationTotal);
 
 
